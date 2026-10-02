@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">b05NavigationDrawer</string>
+    <string name="texto1">Actividad 1</string>
+    <string name="nombre">Alvaro Villaverde</string>
+    <string name="email">AlvaroVillaverde@gmail.com</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+</resources>
