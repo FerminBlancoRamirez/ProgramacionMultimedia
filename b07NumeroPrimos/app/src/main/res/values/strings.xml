@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">b07NumeroPrimos</string>
+    <string name="enunciado">8. Numero primos</string>
+    <string name="accion">Ingrese el ordinal deseado:</string>
+    <string name="boton">Calcular</string>
+    <string name="texto">Text View</string>
+</resources>
