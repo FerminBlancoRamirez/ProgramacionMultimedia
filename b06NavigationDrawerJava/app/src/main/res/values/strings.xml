@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">b06NavigationDrawerJava</string>
+    <string name="open_nav">Open Navigation Drawer</string>
+    <string name="close_nav">Close Navigation Drawer</string>
+
+    <string name="Nombre">Nombre: Fermín Blanco Ramírez</string>
+    <string name="Correo">Email: fermin.bla.ram@edu.cebem.es</string>
+
+    <!--Fragment Home-->
+    <string name="Home">Home</string>
+    <string name="Bienvenido">Bienvenido a la pantalla principal</string>
+
+    <!--Fragment Settings-->
+    <string name="Settings">Ajustes</string>
+    <string name="BienvenidoSettings">Bienvenido a la pantalla de ajustes</string>
+
+    <!--Fragment Accesibility-->
+    <string name="Accesibilidad">Accesibilidad</string>
+    <string name="BienvenidoAccesibilidad">Bienvenido a la pantalla de accesibilidad</string>
+</resources>

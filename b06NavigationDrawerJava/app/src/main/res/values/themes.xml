@@ -1,0 +1,4 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="Base.Theme.B06NavigationDrawerJava" parent="Theme.Material3.DayNight.NoActionBar" />
+    <style name="Theme.B06NavigationDrawerJava" parent="Base.Theme.B06NavigationDrawerJava" />
+</resources>
