@@ -17,6 +17,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/eTMeterNumeros"
         android:textSize="30sp"
         android:textStyle="bold"/>
 
@@ -28,6 +29,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tVEnunciado"
+        app:layout_constraintBottom_toTopOf="@id/boton"
         android:hint="@string/accion"
         android:textSize="25sp"
         android:inputType="number"/>
