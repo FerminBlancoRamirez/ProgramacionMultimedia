@@ -11,9 +11,6 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-import java.net.URI;
-import java.net.URL;
-
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -38,8 +35,9 @@ public class MainActivity extends AppCompatActivity {
         });
 
         boton2.setOnClickListener(e->{
-            //Intent intento = new Intent(MainActivity.this,);
-            //startActivity(intento);
+            Intent intent = new Intent(MainActivity.this, WebViewActivity.class);
+            intent.putExtra("url", "https://github.com/FerminBlancoRamirez");
+            startActivity(intent);
         });
 
     }

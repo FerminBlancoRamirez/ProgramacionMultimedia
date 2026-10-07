@@ -50,26 +50,16 @@
         app:layout_constraintTop_toBottomOf="@id/boton"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/segundoTexto"
-        android:textStyle="bold"/>
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:textStyle="bold"
+        android:layout_marginBottom="230dp"/>
 
-    <TextView
-        android:id="@+id/segundoTexto"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/titulo2"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:text="@string/TextoExplicito"
-        app:layout_constraintBottom_toTopOf="@id/boton2"
-        android:textSize="25sp"
-        android:textStyle="bold" />
 
     <Button
         android:id="@+id/boton2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/segundoTexto"
+        app:layout_constraintTop_toBottomOf="@id/titulo2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
