@@ -1,44 +1,43 @@
-package com.example.implicitintent;
+package com.example.implicitintent
 
-import android.content.Intent;
-import android.net.Uri;
-import android.os.Bundle;
-import android.widget.Button;
+import android.content.Intent
+import android.net.Uri
+import android.os.Bundle
+import android.view.View
+import android.widget.Button
+import androidx.activity.enableEdgeToEdge
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.OnApplyWindowInsetsListener
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
 
-import androidx.activity.EdgeToEdge;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
+class MainActivity : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        this.enableEdgeToEdge()
+        setContentView(R.layout.activity_main)
+        ViewCompat.setOnApplyWindowInsetsListener(
+            findViewById<View?>(R.id.main),
+            OnApplyWindowInsetsListener { v: View?, insets: WindowInsetsCompat? ->
+                val systemBars = insets!!.getInsets(WindowInsetsCompat.Type.systemBars())
+                v!!.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
+                insets
+            })
 
-public class MainActivity extends AppCompatActivity {
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_main);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
-
-        Button boton=findViewById(R.id.boton);
-        Button boton2=findViewById(R.id.boton2);
+        val boton = findViewById<Button>(R.id.boton)
+        val boton2 = findViewById<Button>(R.id.boton2)
 
 
-        boton.setOnClickListener(e->{
-            String url = "https://github.com/FerminBlancoRamirez";
-            Intent intent=new Intent(Intent.ACTION_VIEW, Uri.parse(url));
-            startActivity(intent);
-        });
+        boton.setOnClickListener(View.OnClickListener { e: View? ->
+            val url = "https://github.com/FerminBlancoRamirez"
+            val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
+            startActivity(intent)
+        })
 
-        boton2.setOnClickListener(e->{
-            Intent intent = new Intent(MainActivity.this, WebViewActivity.class);
-            intent.putExtra("url", "https://github.com/FerminBlancoRamirez");
-            startActivity(intent);
-        });
-
+        boton2.setOnClickListener(View.OnClickListener { e: View? ->
+            val intent = Intent(this@MainActivity, WebViewActivity::class.java)
+            intent.putExtra("url", "https://github.com/FerminBlancoRamirez")
+            startActivity(intent)
+        })
     }
 }

@@ -10,5 +10,6 @@
 
     <!--Segundo Activity-->
     <string name="Texto2">Estas en tu segundo activity tras el intent</string>
-    <string name="Boton2">Vamos a volver al primer activity</string>
+    <string name="Boton3">Click para abrir la web</string>
+    <string name="Boton2">Vamonos al fragment para ver la web</string>
 </resources>

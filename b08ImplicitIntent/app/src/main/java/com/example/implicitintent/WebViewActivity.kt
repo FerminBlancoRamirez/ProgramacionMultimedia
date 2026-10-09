@@ -1,40 +1,44 @@
-package com.example.implicitintent;
+package com.example.implicitintent
 
-import android.os.Bundle;
-import android.webkit.WebSettings;
-import android.webkit.WebView; // 1. IMPORTANTE: Import del WebView de Android
-import android.webkit.WebViewClient;
+import android.os.Bundle
+import android.view.View
+import android.webkit.WebView
+import android.webkit.WebViewClient
+import android.widget.Button
+import androidx.activity.enableEdgeToEdge
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.OnApplyWindowInsetsListener
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
 
-import androidx.activity.EdgeToEdge;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
+// 1. IMPORTANTE: Import del WebView de Android
+class WebViewActivity : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        this.enableEdgeToEdge()
+        setContentView(R.layout.activity_web_view)
 
-public class WebViewActivity extends AppCompatActivity {
+        ViewCompat.setOnApplyWindowInsetsListener(
+            findViewById<View?>(R.id.main),
+            OnApplyWindowInsetsListener { v: View?, insets: WindowInsetsCompat? ->
+                val systemBars = insets!!.getInsets(WindowInsetsCompat.Type.systemBars())
+                v!!.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
+                insets
+            })
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_web_view);
-
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
+        val boton = findViewById<Button>(R.id.boton3)
 
         // 2. CORREGIDO: Usar el tipo de dato WebView
-        WebView webView = findViewById(R.id.webView);
+        val webView = findViewById<WebView>(R.id.webView)
 
-        webView.setWebViewClient(new WebViewClient());
-        WebSettings webSettings = webView.getSettings();
-        webSettings.setJavaScriptEnabled(true);
-
-        String url = getIntent().getStringExtra("url");
-        if (url != null && !url.isEmpty()) {
-            webView.loadUrl(url);
-        }
+        boton.setOnClickListener(View.OnClickListener { e: View? ->
+            webView.setWebViewClient(WebViewClient())
+            val webSettings = webView.getSettings()
+            webSettings.setJavaScriptEnabled(true)
+            val url = getIntent().getStringExtra("url")
+            if (url != null && !url.isEmpty()) {
+                webView.loadUrl(url)
+            }
+        })
     }
 }
