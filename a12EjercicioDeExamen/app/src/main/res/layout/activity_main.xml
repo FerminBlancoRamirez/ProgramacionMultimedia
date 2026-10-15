@@ -6,15 +6,95 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:background="@color/salmon">
+    android:background="@color/salmon"
+    android:padding="40dp">
 
     <TextView
+        android:id="@+id/titulo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="@string/Titulo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:textSize="30sp"
+        android:textStyle="bold"/>
+
+
+    <LinearLayout
+        android:id="@+id/lNGalones"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/titulo"
+        android:layout_marginTop="95dp"
+        android:padding="20dp">
+
+        <TextView
+            android:id="@+id/Galones"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/Galones"
+            android:textSize="20sp"
+            android:textStyle="bold"/>
+
+        <EditText
+            android:id="@+id/GalonesRecoger"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="@string/GalonesRecoger"
+            android:layout_marginStart="20dp"
+            android:inputType="number"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/lNPintas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/lNGalones"
+        android:layout_marginTop="50dp"
+        android:padding="20dp">
+
+        <TextView
+            android:id="@+id/Pintas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/Pintas"
+            android:textSize="20sp"
+            android:textStyle="bold"/>
+
+        <EditText
+            android:id="@+id/PintasRecoger"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="@string/PintasRecoger"
+            android:layout_marginStart="20dp"
+            android:inputType="number"
+            />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/Boton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/cian"
+        app:layout_constraintTop_toBottomOf="@id/lNPintas"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="35dp"
+        android:text="@string/Boton1"
+        android:textColor="@color/black"
+        android:textSize="20sp"/>
+
+
+
+
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

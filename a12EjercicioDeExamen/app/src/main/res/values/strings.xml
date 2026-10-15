@@ -4,10 +4,10 @@
 
     <!--Primer activitie-->
     <string name="Titulo">Transformador a litros</string>
-    <string name="Galones">Galones</string>
-    <string name="GalonesRecoger">Introduce el numero de los galones</string>
-    <string name="Pintas">Pintas</string>
-    <string name="PintasRecoger">Introduce el numero de pintas</string>
+    <string name="Galones">Galones:</string>
+    <string name="GalonesRecoger">Ej: 12.5 galones</string>
+    <string name="Pintas">Pintas:</string>
+    <string name="PintasRecoger">Ej: 5.5 pintas</string>
     <string name="Boton1">Enviar datos</string>
 
     <!--Segundo activitie-->
