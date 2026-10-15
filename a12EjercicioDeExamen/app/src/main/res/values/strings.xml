@@ -8,10 +8,11 @@
     <string name="GalonesRecoger">Ej: 12.5 galones</string>
     <string name="Pintas">Pintas:</string>
     <string name="PintasRecoger">Ej: 5.5 pintas</string>
+    <string name="Solucion">Numero de litros totales: </string>
     <string name="Boton1">Enviar datos</string>
 
     <!--Segundo activitie-->
     <string name="Titulo2">Resultado</string>
-    <String name="Boton2">Sumar y convertir a litros</String>
-    <String name="Boton3">Mandar de vuelta el resultado</String>
+    <string name="Boton2">Sumar y convertir a litros</string>
+    <string name="Boton3">Mandar de vuelta el resultado</string>
 </resources>

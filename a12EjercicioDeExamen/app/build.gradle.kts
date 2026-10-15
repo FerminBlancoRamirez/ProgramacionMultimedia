@@ -4,14 +4,12 @@ plugins {
 
 android {
     namespace = "com.example.a12ejerciciodeexamen"
-    compileSdk {
-        version = release(37)
-    }
+    compileSdk = 36 // Subido a 36 para cumplir con las librerías de AndroidX
 
     defaultConfig {
         applicationId = "com.example.a12ejerciciodeexamen"
         minSdk = 24
-        targetSdk = 37
+        targetSdk = 35
         versionCode = 1
         versionName = "1.0"
 
@@ -26,8 +24,8 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+        sourceCompatibility = JavaVersion.VERSION_17 // Actualizado a Java 17
+        targetCompatibility = JavaVersion.VERSION_17
     }
 }
 

@@ -28,8 +28,11 @@
         android:orientation="horizontal"
         android:gravity="center"
         app:layout_constraintTop_toBottomOf="@id/titulo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="95dp"
-        android:padding="20dp">
+        android:layout_marginEnd="60dp"
+       >
 
         <TextView
             android:id="@+id/Galones"
@@ -37,7 +40,8 @@
             android:layout_height="wrap_content"
             android:text="@string/Galones"
             android:textSize="20sp"
-            android:textStyle="bold"/>
+            android:textStyle="bold"
+            />
 
         <EditText
             android:id="@+id/GalonesRecoger"
@@ -45,7 +49,7 @@
             android:layout_height="wrap_content"
             android:hint="@string/GalonesRecoger"
             android:layout_marginStart="20dp"
-            android:inputType="number"
+            android:inputType="numberDecimal"
             />
 
     </LinearLayout>
@@ -57,8 +61,9 @@
         android:orientation="horizontal"
         android:gravity="center"
         app:layout_constraintTop_toBottomOf="@id/lNGalones"
+        app:layout_constraintStart_toStartOf="@id/lNGalones"
         android:layout_marginTop="50dp"
-        android:padding="20dp">
+       >
 
         <TextView
             android:id="@+id/Pintas"
@@ -74,7 +79,7 @@
             android:layout_height="wrap_content"
             android:hint="@string/PintasRecoger"
             android:layout_marginStart="20dp"
-            android:inputType="number"
+            android:inputType="numberDecimal"
             />
     </LinearLayout>
 
@@ -86,10 +91,22 @@
         app:layout_constraintTop_toBottomOf="@id/lNPintas"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="35dp"
+        android:layout_marginTop="45dp"
         android:text="@string/Boton1"
         android:textColor="@color/black"
         android:textSize="20sp"/>
+
+    <TextView
+        android:id="@+id/Solucion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/Boton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="70dp"
+        android:text="@string/Solucion"
+        android:textSize="20sp"
+        android:textStyle="bold"/>
 
 
 
