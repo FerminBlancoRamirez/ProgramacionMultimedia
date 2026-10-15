@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">a12EjercicioDeExamen</string>
+
+
+    <!--Primer activitie-->
+    <string name="Titulo">Transformador a litros</string>
+    <string name="Galones">Galones</string>
+    <string name="GalonesRecoger">Introduce el numero de los galones</string>
+    <string name="Pintas">Pintas</string>
+    <string name="PintasRecoger">Introduce el numero de pintas</string>
+    <string name="Boton1">Enviar datos</string>
+
+    <!--Segundo activitie-->
+    <string name="Titulo2">Resultado</string>
+    <String name="Boton2">Sumar y convertir a litros</String>
+    <String name="Boton3">Mandar de vuelta el resultado</String>
+</resources>
