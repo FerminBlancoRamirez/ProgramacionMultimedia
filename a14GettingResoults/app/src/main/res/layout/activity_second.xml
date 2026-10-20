@@ -5,15 +5,76 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SecondActivity">
+    tools:context=".SecondActivity"
+    android:background="@color/Verde">
+
     <TextView
+        android:id="@+id/TituloSecond"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hola"
-        android:textSize="100sp"
+        android:text="a14 Fusion de cadenas"
+        android:textSize="30sp"
+        android:textStyle="bold"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="75dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"/>
+
+    <LinearLayout
+        android:id="@+id/LinearDatos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toTopOf="@id/TituloSecond"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="200dp">
+
+        <TextView
+            android:id="@+id/FechaSecond"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="30sp"
+            android:textStyle="italic"
+            android:hint="FECHA"
+            android:layout_marginEnd="60dp"
+            />
+
+        <TextView
+            android:id="@+id/HoraSecond"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="30sp"
+            android:textStyle="italic"
+            android:hint="HORA"
+            android:layout_marginStart="60dp"/>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/BotonSecond"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:text="Concatenar"
+        app:layout_constraintTop_toBottomOf="@id/LinearDatos"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="120dp" />
+
+    <TextView
+        android:id="@+id/ResultadoSecond"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/BotonSecond"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textSize="30sp"
+        android:textStyle="italic"
+        android:hint="Cadena de regreso"
+        android:layout_marginTop="80dp"/>
+
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
