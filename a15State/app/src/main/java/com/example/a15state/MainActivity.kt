@@ -1,0 +1,48 @@
+package com.example.a15state
+
+import android.os.Bundle
+import android.widget.Button
+import android.widget.EditText
+import android.widget.TextView
+import androidx.activity.enableEdgeToEdge
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
+
+class MainActivity : AppCompatActivity() {
+    private lateinit var editText: EditText
+    private lateinit var button: Button
+    private lateinit var textView: TextView
+    private var counter = 0
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
+        setContentView(R.layout.activity_main)
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
+            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
+            insets
+        }
+
+        editText=findViewById<EditText>(R.id.editText)
+        textView=findViewById<TextView>(R.id.TextViewCounter)
+        button=findViewById<Button>(R.id.Button)
+        button.setOnClickListener {
+            counter++
+            textView.text = counter.toString()
+        }
+    }
+    //metodo para guardar el estado de la aplicacion
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState.putInt("KEY_COUNTER", counter)
+    }
+
+    //metodo para recuperar el estado de la aplicacion
+    override fun onRestoreInstanceState(savedInstanceState: Bundle) {
+        super.onRestoreInstanceState(savedInstanceState)
+        counter = savedInstanceState.getInt("KEY_COUNTER")
+        textView.text = counter.toString()
+    }
+}
