@@ -14,10 +14,13 @@ class MainActivity : AppCompatActivity() {
 
     companion object{
         const val KEY_COUNTER = "KEY_COUNTER"
+        const val TEXT_COUNTER = "TEXT_COUNTER"
     }
     private lateinit var editText: EditText
     private lateinit var button: Button
     private lateinit var textView: TextView
+
+    private lateinit var texto: String
     private var counter = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -37,18 +40,23 @@ class MainActivity : AppCompatActivity() {
             counter++
             textView.text = counter.toString()
         }
+
+       texto=editText.text.toString()
     }
     //metodo para guardar el estado de la aplicacion
     override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
         Toast.makeText(this, "onSaveInstanceState", Toast.LENGTH_SHORT).show()
         outState.putInt(KEY_COUNTER, counter)
+        outState.putString(TEXT_COUNTER, editText.text.toString())
     }
 
     //metodo para recuperar el estado de la aplicacion
     override fun onRestoreInstanceState(savedInstanceState: Bundle) {
         super.onRestoreInstanceState(savedInstanceState)
         counter = savedInstanceState.getInt(KEY_COUNTER)
+        texto = savedInstanceState.getString(TEXT_COUNTER, "")
         textView.text = counter.toString()
+        editText.setText(texto.uppercase())
     }
 }
