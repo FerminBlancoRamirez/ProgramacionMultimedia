@@ -4,12 +4,17 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
 class MainActivity : AppCompatActivity() {
+
+    companion object{
+        const val KEY_COUNTER = "KEY_COUNTER"
+    }
     private lateinit var editText: EditText
     private lateinit var button: Button
     private lateinit var textView: TextView
@@ -36,13 +41,14 @@ class MainActivity : AppCompatActivity() {
     //metodo para guardar el estado de la aplicacion
     override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
-        outState.putInt("KEY_COUNTER", counter)
+        Toast.makeText(this, "onSaveInstanceState", Toast.LENGTH_SHORT).show()
+        outState.putInt(KEY_COUNTER, counter)
     }
 
     //metodo para recuperar el estado de la aplicacion
     override fun onRestoreInstanceState(savedInstanceState: Bundle) {
         super.onRestoreInstanceState(savedInstanceState)
-        counter = savedInstanceState.getInt("KEY_COUNTER")
+        counter = savedInstanceState.getInt(KEY_COUNTER)
         textView.text = counter.toString()
     }
 }
