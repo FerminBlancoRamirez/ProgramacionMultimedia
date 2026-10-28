@@ -12,12 +12,15 @@ import androidx.recyclerview.widget.RecyclerView
 
 class MainActivity : AppCompatActivity() {
 
+    //Creas las variables que vamos a usar
     private lateinit var recyclerView: RecyclerView
     private lateinit var editText: EditText
     private lateinit var button: Button
 
     private lateinit var buttonEliminar: Button
     private lateinit var adapter: RecyclerViewAdapter
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,43 +32,49 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-
-        // 1. Inicialización correcta de las vistas
+        //instanciamos las variables
         recyclerView = findViewById(R.id.ReciclerView)
         button = findViewById(R.id.Boton)
         buttonEliminar = findViewById(R.id.BotonEliminar)
         editText = findViewById(R.id.Nombres)
-
-        // 2. Configuración del RecyclerView y el Adapter
-        adapter = RecyclerViewAdapter(listaNombres)
+        //creamos el adapter y le pasamos la lista de nombres
+        adapter = RecyclerViewAdapter(Nombres.listaNombres)
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.adapter = adapter
 
-        // 3. Configuración del evento de clic
+        //Con el primer boton añadimos un nuevo nombre a la lista del adapter
         button.setOnClickListener {
+            //recogemos el texto del editText y lo convertimos a string
             val nombre = editText.text.toString().trim()
+            //Comprobamos que no este vacio antes de añadirlo
             if (nombre.isNotEmpty()) {
+                //Lo convertimos en un elemento tipo Nombres
                 val nuevoObjeto = Nombres(nombre)
-                listaNombres.add(nuevoObjeto)
-
-                // Notificar al adaptador usando la variable 'adapter'
-                adapter.notifyItemInserted(listaNombres.size - 1)
-
-                // Scroll automático al nuevo elemento
-                recyclerView.scrollToPosition(listaNombres.size - 1)
-
-                // Limpiar el campo de texto
+                //Lo añadimos a la lista
+                Nombres.listaNombres.add(nuevoObjeto)
+                //Notificamos al adapter que se ha añadido un nuevo elemento
+                adapter.notifyItemInserted(Nombres.listaNombres.size - 1)
+                //Le añadimos un autoscroll al nuevo elemento poniendolo en ultima posicion de la lista
+                recyclerView.scrollToPosition(Nombres.listaNombres.size - 1)
+                //Limpiamos el editText
                 editText.text.clear()
             }
         }
-
+        //Con el segundo boton eliminaremos un nombre que escojamos
         buttonEliminar.setOnClickListener {
+            //Recogemos el texto del editText y lo convertimos a string
             val nombre = editText.text.toString().trim()
-            if (listaNombres.isNotEmpty() && nombre.isNotEmpty()) {
-                val indice = listaNombres.indexOfFirst { it.nombre == nombre }
+            //comprobamos que ni la lista ni el nombre esten vacios
+            if (Nombres.listaNombres.isNotEmpty() && nombre.isNotEmpty()) {
+                //recogemos el indice del elemento que vamos a eliminar
+                val indice = Nombres.listaNombres.indexOfFirst { it.nombre == nombre }
+                //Comprobamos que sea un indice valido
                 if (indice != -1) {
-                    listaNombres.removeAt(indice)
+                    //Eliminamos de la lista mediante el indice
+                    Nombres.listaNombres.removeAt(indice)
+                    //Notificamos al adapter del cambio
                     adapter.notifyItemRemoved(indice)
+                    //Limpiamos el editText
                     editText.text.clear()
             }
         }
