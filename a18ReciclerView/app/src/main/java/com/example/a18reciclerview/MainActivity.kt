@@ -48,8 +48,9 @@ class MainActivity : AppCompatActivity() {
             val nombre = editText.text.toString().trim()
             //Comprobamos que no este vacio antes de añadirlo
             if (nombre.isNotEmpty()) {
-                //Lo convertimos en un elemento tipo Nombres
-                val nuevoObjeto = Nombres(nombre)
+                //Extraemos el codigo ISO de dos caracteres a partir del texto y creamos un nuevo objeto Nombres
+                val codigoIso = if (nombre.length >= 2) nombre.take(2).lowercase() else "es"
+                val nuevoObjeto = Nombres(nombre, codigoIso)
                 //Lo añadimos a la lista
                 Nombres.listaNombres.add(nuevoObjeto)
                 //Notificamos al adapter que se ha añadido un nuevo elemento
