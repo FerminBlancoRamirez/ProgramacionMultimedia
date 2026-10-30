@@ -18,6 +18,7 @@ class RecyclerViewAdapter(private val listaNombres: List<Nombres>) :
         //Instanciamos el TextView del modelo que creamos en el layout
         val tvNombre: TextView = view.findViewById(R.id.Texto)
 
+        val tvCapital: TextView = view.findViewById(R.id.Capital)
     }
 
     //Creamos el ViewHolder y inflamos el layout
@@ -33,6 +34,7 @@ class RecyclerViewAdapter(private val listaNombres: List<Nombres>) :
         //Accede a cada posicion de la lista y añade el nombre correspondiente a la vista
         val item = listaNombres[position]
         holder.tvNombre.text = item.nombre
+        holder.tvCapital.text = item.capital
         //Buscamos el ID del PNG en drawable usando el código ISO
         val context = holder.itemView.context
         val flagResId = context.resources.getIdentifier(

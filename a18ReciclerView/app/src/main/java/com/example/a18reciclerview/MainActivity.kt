@@ -50,7 +50,8 @@ class MainActivity : AppCompatActivity() {
             if (nombre.isNotEmpty()) {
                 //Extraemos el codigo ISO de dos caracteres a partir del texto y creamos un nuevo objeto Nombres
                 val codigoIso = if (nombre.length >= 2) nombre.take(2).lowercase() else "es"
-                val nuevoObjeto = Nombres(nombre, codigoIso)
+                val capital = nombre.substringAfter(",").trim().take(20)
+                val nuevoObjeto = Nombres(nombre, codigoIso, capital)
                 //Lo añadimos a la lista
                 Nombres.listaNombres.add(nuevoObjeto)
                 //Notificamos al adapter que se ha añadido un nuevo elemento
